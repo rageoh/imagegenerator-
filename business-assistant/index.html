@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Business Shopping Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Business Shopping Assistant</h1>
+            <p>Enter your business details; get a weekly shopping list with ~10% buffer.</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="businessType">Business type</label>
+                        <input id="businessType" type="text" placeholder="e.g., Restaurant" />
+                    </div>
+                    <div class="field">
+                        <label for="weeklyRevenue">Weekly revenue</label>
+                        <input id="weeklyRevenue" type="text" placeholder="$3,000" />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="dailySales">Average daily sales</label>
+                    <textarea id="dailySales" rows="5" placeholder="One item per line, e.g.\n200 burgers, 100 buns, 50 sodas"></textarea>
+                    <small>Use plain numbers and item names; commas or "x" are accepted. Examples: "200 burgers", "100 buns", "50 sodas"</small>
+                </div>
+
+                <div class="actions">
+                    <button id="generateBtn">Generate shopping list</button>
+                    <button id="copyBtn" class="secondary">Copy list</button>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Shopping list (weekly +10% buffer)</h2>
+                <pre id="output" class="output" aria-live="polite"></pre>
+            </section>
+
+            <section class="card example">
+                <details>
+                    <summary>Example</summary>
+                    <div class="example-grid">
+                        <div>
+                            <div class="example-title">Input</div>
+                            <pre class="example-block">Business type: Restaurant
+Weekly revenue: $3,000
+Average daily sales: 200 burgers, 100 buns, 50 sodas</pre>
+                        </div>
+                        <div>
+                            <div class="example-title">Output format</div>
+                            <pre class="example-block">- Item: Quantity
+- Item: Quantity
+- Item: Quantity</pre>
+                        </div>
+                    </div>
+                </details>
+            </section>
+        </main>
+
+        <footer>
+            <small>No extra text will be added to the output — only the list.</small>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    </body>
+    </html>
+
